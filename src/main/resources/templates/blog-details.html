@@ -13,8 +13,10 @@
         <h1 th:text="${el.title}"></h1>
         <p th:text="${el.full_text}"/>
         <p><b>Количество просмотров: </b> <span th:text="${el.views}"/><p/>
-        <a th:href="'/blog/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a>
-        <a th:href="'/blog/' + ${el.id} + '/remove'" class="btn btn-warning">Удалить</a>
+        <a th:href="'/blog/' + ${el.id} + '/edit'" method="post">Редактировать</a>
+        <form th:action="'/blog/' + ${el.id} + '/remove'">
+            <button class="btn btn-warning" type="submit">Удалить</a>
+        </form>
     </div>
 </div>
 
